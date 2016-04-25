@@ -31,7 +31,7 @@ public class calculadora extends JFrame {
 	private JButton btnNewButton_14;
 	private JTextField textField;
 	
-	
+	// variaveis auxiliares
 	double numero1;
 	double numero2;
 	double resultado;
@@ -58,6 +58,11 @@ public class calculadora extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	public void digit(double x){
+		numero2 = 10*numero2 + x;
+		textField.setText(String.valueOf(numero2));
+	}
+	
 	public calculadora() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -66,11 +71,12 @@ public class calculadora extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		// botoes e atribuiçoes
 		JButton btnNewButton = new JButton("7");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				textField.setText("7");
-				botao = 7;
+				//textField.setText(String.valueOf(numero2));
+				digit(7);
 			}
 		});
 		btnNewButton.setBounds(35, 99, 89, 23);
@@ -79,8 +85,8 @@ public class calculadora extends JFrame {
 		JButton btnNewButton_1 = new JButton("8");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textField.setText("8");
-				botao = 8;
+				//textField.setText(String.valueOf(numero2));
+				digit(8);
 			}
 		});
 		btnNewButton_1.setBounds(134, 99, 89, 23);
@@ -89,8 +95,8 @@ public class calculadora extends JFrame {
 		btnNewButton_2 = new JButton("9");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textField.setText("9");
-				botao = 9;
+				//textField.setText(String.valueOf(numero2));
+				digit(9);
 			}
 		});
 		btnNewButton_2.setBounds(233, 99, 89, 23);
@@ -99,8 +105,8 @@ public class calculadora extends JFrame {
 		btnNewButton_3 = new JButton("4");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textField.setText("4");
-				botao = 4;
+				//textField.setText(String.valueOf(numero2));
+				digit(4);
 			}
 		});
 		btnNewButton_3.setBounds(35, 133, 89, 23);
@@ -109,8 +115,8 @@ public class calculadora extends JFrame {
 		btnNewButton_4 = new JButton("5");
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textField.setText("5");
-				botao = 5;
+				//textField.setText(String.valueOf(numero2));
+				digit(5);
 			}
 		});
 		btnNewButton_4.setBounds(134, 133, 89, 23);
@@ -119,8 +125,8 @@ public class calculadora extends JFrame {
 		btnNewButton_5 = new JButton("6");
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textField.setText("6");
-				botao = 6;
+				//textField.setText(String.valueOf(numero2));
+				digit(6);
 			}
 		});
 		btnNewButton_5.setBounds(233, 133, 89, 23);
@@ -129,8 +135,8 @@ public class calculadora extends JFrame {
 		btnNewButton_6 = new JButton("1");
 		btnNewButton_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textField.setText("1");
-				botao = 1;
+				//textField.setText(String.valueOf(numero2));
+				digit(1);
 			}
 		});
 		btnNewButton_6.setBounds(35, 167, 89, 23);
@@ -139,8 +145,8 @@ public class calculadora extends JFrame {
 		btnNewButton_7 = new JButton("2");
 		btnNewButton_7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textField.setText("2");
-				botao = 2;
+				//textField.setText(String.valueOf(numero2));
+				digit(2);
 			}
 		});
 		btnNewButton_7.setBounds(134, 167, 89, 23);
@@ -149,8 +155,8 @@ public class calculadora extends JFrame {
 		btnNewButton_8 = new JButton("3");
 		btnNewButton_8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textField.setText("3");
-				botao = 3;
+				//textField.setText(String.valueOf(numero2));
+				digit(3);
 			}
 		});
 		btnNewButton_8.setBounds(233, 167, 89, 23);
@@ -160,7 +166,8 @@ public class calculadora extends JFrame {
 		btnNewButton_9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				operacao = "+";
-				numero1 = botao;
+				numero1 = numero2;
+				numero2 = 0;
 			}
 		});
 		
@@ -171,7 +178,8 @@ public class calculadora extends JFrame {
 		btnNewButton_10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				operacao = "-";
-				numero1 = botao;
+				numero1 = numero2;
+				numero2 = 0;
 			}
 		});
 		
@@ -182,7 +190,8 @@ public class calculadora extends JFrame {
 		btnNewButton_11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				operacao = "*";
-				numero1 = botao;
+				numero1 = numero2;
+				numero2 = 0;
 			}
 		});
 		
@@ -193,7 +202,8 @@ public class calculadora extends JFrame {
 		btnNewButton_12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				operacao = "/";
-				numero1 = botao;
+				numero1 = numero2;
+				numero2 = 0;
 			}
 		});
 		
@@ -203,31 +213,33 @@ public class calculadora extends JFrame {
 		btnNewButton_13 = new JButton("0");
 		btnNewButton_13.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textField.setText("0");
-				botao = 0;
+				//textField.setText(String.valueOf(numero2));
+				digit(0);
 			}
 		});
 		btnNewButton_13.setBounds(134, 201, 89, 23);
 		contentPane.add(btnNewButton_13);
+		
+		// logica do botao igual, sem analizar divisao por zero
 		
 		btnNewButton_14 = new JButton("=");
 		btnNewButton_14.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				switch (operacao){
 				 case "+": 
-					 resultado = numero1 + botao;
+					 resultado = numero1 + numero2;
 					 textField.setText(String.valueOf(resultado));
 					 break;
 				 case "-": 
-					 resultado = numero1 - botao;
+					 resultado = numero1 - numero2;
 					 textField.setText(String.valueOf(resultado));
 					 break;
 				 case "*": 
-					 resultado = numero1 * botao;
+					 resultado = numero1 * numero2;
 					 textField.setText(String.valueOf(resultado));
 					 break;	 
 				 case "/": 
-					 resultado = numero1 / botao;
+					 resultado = numero1 / numero2;
 					 textField.setText(String.valueOf(resultado));
 					 break;	 
 				}
@@ -247,7 +259,7 @@ public class calculadora extends JFrame {
 		btnNewButton_15.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				numero1 = 0;
-				botao = 0;
+				numero2 = 0;
 				textField.setText(null);
 			}
 		});
